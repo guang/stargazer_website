@@ -3,10 +3,11 @@
             @description:       front-end API and views
 """
 
-from flask import Flask, render_template, jsonify  # , request
+from flask import Flask, render_template, jsonify
 from cassandra.cluster import Cluster
 # from cassandra.query import BatchStatement
-from utilities import *                    # NOQA
+from utilities import *                     # NOQA
+from map_url import *                       # NOQA
 
 
 def _connect_to_cassandra(keyspace):
@@ -21,7 +22,9 @@ session = _connect_to_cassandra('matches_simple')
 @app.route("/")
 @app.route("/index")
 def landing():
-    return render_template("index.html")
+    top_10 = get_top_10_dict()
+
+    return render_template("index.html", top_10=top_10)
 
 
 @app.route("/api/<map_name>/<query_type>/<race>/")
@@ -44,6 +47,33 @@ def duration_by_time(map_name, query_type, race):
     # TODO do stuff for different cases
     # TODO add request.args.get("")
     return jsonify(name=map_name, data=results)
+
+
+def get_top_10_dict():
+    """ Get top 10 from cassandra, sort them, then put them into a dictionary
+    for easy access in the html view.
+
+    Example:
+
+    """
+    top_10_info = session.execute("SELECT * FROM yolo_top_10")
+
+    top_10_sorted = []
+    for row in top_10_info:
+        try:
+            map_url = ladder_maps[row[0]]
+        except KeyError:
+            map_url = ("https://s3-us-west-1.amazonaws.com/guang-stargazer/"
+                       "ladder_maps/cat.jpg")
+        top_10_sorted.append((row[0], row[1], map_url))
+        top_10_sorted.sort(key=lambda tup: tup[1], reverse=True)
+
+    top_10_dict = {}
+    for position, row in enumerate(top_10_sorted):
+        top_10_dict["num" + str(position)] = {"map_name": row[0],
+                                              "match_count": row[1],
+                                              "map_url": row[2]}
+    return top_10_dict
 
 
 if __name__ == "__main__":

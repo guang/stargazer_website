@@ -12,9 +12,33 @@
 <script src="../static/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
 
 <body class="body">
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.stargazer.pw">Stargazer: Map Analytics in Starcraft II</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://www.slideshare.net/gy8/map-analytics-in-starcraft-ii-44376933">Presentation</a></li>
+        <li><a href="http://www5.decf.berkeley.edu/~gyang/">Guang Yang</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
   <body>
   <div class="container-fluid">
-
+    <!-- Graph and Inputs for Graph -->
     <div class="row">
       <div class="col-md-8">
         <div id="duration_by_time" style="height:350"></div>
@@ -33,9 +57,17 @@
       </div>
     </div>
 
+    <!-- Top 10 Maps -->
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         Most Popular Maps:
+        <div>
+        {{top_10['num1']['map_name']}}
+        <br>
+        {{top_10['num1']['match_count']}}
+        <br>
+        <embed src={{top_10['num1']['map_url']}} height="200px">
+        </div>
       </div>
       <div>
 
