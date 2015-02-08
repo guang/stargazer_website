@@ -40,15 +40,18 @@
   <div class="container-fluid">
     <!-- Graph and Inputs for Graph -->
     <div class="row">
+      <!-- Noice Spacing -->
+      <div class="col-md-1">
+      </div>
       <div class="col-md-8">
         <div id="duration_by_time" style="height:350"></div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="form-group">
           <label for="yolo">Map Name:</label>
           <input id="map_name">
         </div>
-        <select id="query_type">
+        <select id="query_type" class="form-control">
           <option value="duration">duration</option>
           <option value="winrate">win rate</option>
         </select>
@@ -59,15 +62,114 @@
 
     <!-- Top 10 Maps -->
     <div class="row">
+    Most Popular Maps:
       <div class="col-md-12">
-        Most Popular Maps:
-        <div>
+
+        <!-- Noice Spacing -->
+        <div class="col-md-1">
+        </div>
+
+        <!-- Map num 0 -->
+        <div class="col-md-2">
+        {{top_10['num0']['map_name']}}
+        <br>
+        {{top_10['num0']['match_count']}}
+        <br>
+        <embed src={{top_10['num0']['map_url']}} width="200px">
+        </div>
+
+        <!-- Map num 1 -->
+        <div class="col-md-2">
         {{top_10['num1']['map_name']}}
         <br>
         {{top_10['num1']['match_count']}}
         <br>
-        <embed src={{top_10['num1']['map_url']}} height="200px">
+        <embed src={{top_10['num1']['map_url']}} width="200px">
         </div>
+
+        <!-- Map num 2 -->
+        <div class="col-md-2">
+        {{top_10['num2']['map_name']}}
+        <br>
+        {{top_10['num2']['match_count']}}
+        <br>
+        <embed src={{top_10['num2']['map_url']}} width="200px">
+        </div>
+
+        <!-- Map num 3 -->
+        <div class="col-md-2">
+        {{top_10['num3']['map_name']}}
+        <br>
+        {{top_10['num3']['match_count']}}
+        <br>
+        <embed src={{top_10['num3']['map_url']}} width="200px">
+        </div>
+
+        <!-- Map num 4 -->
+        <div class="col-md-2">
+        {{top_10['num4']['map_name']}}
+        <br>
+        {{top_10['num4']['match_count']}}
+        <br>
+        <embed src={{top_10['num4']['map_url']}} width="200px">
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- Noice Spacing -->
+        <div class="col-md-1">
+        </div>
+
+        <!-- Map num 5 -->
+        <div class="col-md-2">
+        {{top_10['num5']['map_name']}}
+        <br>
+        {{top_10['num5']['match_count']}}
+        <br>
+        <embed src={{top_10['num5']['map_url']}} width="200px">
+        </div>
+
+
+        <!-- Map num 6 -->
+        <div class="col-md-2">
+        {{top_10['num6']['map_name']}}
+        <br>
+        {{top_10['num6']['match_count']}}
+        <br>
+        <embed src={{top_10['num6']['map_url']}} width="200px">
+        </div>
+
+        <!-- Map num 7 -->
+        <div class="col-md-2">
+        {{top_10['num7']['map_name']}}
+        <br>
+        {{top_10['num7']['match_count']}}
+        <br>
+        <embed src={{top_10['num7']['map_url']}} width="200px">
+        </div>
+
+        <!-- Map num 8 -->
+        <div class="col-md-2">
+        {{top_10['num8']['map_name']}}
+        <br>
+        {{top_10['num8']['match_count']}}
+        <br>
+        <embed src={{top_10['num8']['map_url']}} width="200px">
+        </div>
+
+        <!-- Map num 9 -->
+        <div class="col-md-2">
+        {{top_10['num9']['map_name']}}
+        <br>
+        {{top_10['num9']['match_count']}}
+        <br>
+        <embed src={{top_10['num9']['map_url']}} width="200px">
+        </div>
+
+
       </div>
       <div>
 

@@ -68,6 +68,7 @@ def get_top_10_dict():
         top_10_sorted.append((row[0], row[1], map_url))
         top_10_sorted.sort(key=lambda tup: tup[1], reverse=True)
 
+    print(top_10_sorted)
     top_10_dict = {}
     for position, row in enumerate(top_10_sorted):
         top_10_dict["num" + str(position)] = {"map_name": row[0],
