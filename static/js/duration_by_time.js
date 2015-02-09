@@ -8,9 +8,9 @@ $(document).ready(function() {
            type: 'line',
            zoomType: 'x',
            resetZoomButton: {position: {x: 0, y: -30}}},
-    title: {'text': "Match Duration over Time for different Maps"},
+    title: {'text': "Average Match Duration over Time"},
     xAxis: {'type': 'datetime', 'title': {'text': 'Date'}},
-    yAxis: {'title': {'text': 'Game Duration (in seconds)'}, "min": 0},
+    yAxis: {'title': {'text': 'Game Duration (in minutes)'}, "min": 0},
     series: []
   };
 
