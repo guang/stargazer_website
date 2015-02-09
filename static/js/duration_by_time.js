@@ -3,6 +3,17 @@
  */
 
 $(document).ready(function() {
+  function newRandomColor() {
+    var color = [];
+    color.push((Math.random() * 255).toFixed());
+    color.push((Math.random() * 255).toFixed());
+    color.push((Math.random() * 255).toFixed());
+    color.push((Math.random()).toFixed(2));
+    var text = 'rgba(' + color.join(',') + ')';
+    console.log(text);
+    return text;
+  };
+
   var options = {
     chart: {renderTo: 'duration_by_time',
            type: 'line',
@@ -20,12 +31,12 @@ $(document).ready(function() {
     fetch_map(map_name, query_type);
   });
 
-function fetch_map(map_name, query_type) {
-  $.getJSON('/api/' + map_name + '/' + query_type + '/A/', function(list) {
-    options.series.push(list);
-    var map_duration = new Highcharts.Chart(options);
-  });
-}
+  function fetch_map(map_name, query_type) {
+    $.getJSON('/api/' + map_name + '/' + query_type + '/A/', function(list) {
+      options.series.push(list);
+      var map_duration = new Highcharts.Chart(options);
+    });
+  }
 
 
 });
