@@ -44,9 +44,10 @@ def duration_by_time(map_name, query_type, race):
                 results.append([mktime_to_ms(row[1]), row[2]])
             results.sort()
 
+    random_color = random_hex_color()
     # TODO do stuff for different cases
     # TODO add request.args.get("")
-    return jsonify(name=map_name, data=results)
+    return jsonify(color=random_color, name=map_name, data=results)
 
 
 def get_top_10_dict():

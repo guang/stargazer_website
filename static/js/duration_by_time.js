@@ -33,6 +33,7 @@ $(document).ready(function() {
 
   function fetch_map(map_name, query_type) {
     $.getJSON('/api/' + map_name + '/' + query_type + '/A/', function(list) {
+      console.log(list);
       options.series.push(list);
       var map_duration = new Highcharts.Chart(options);
     });
