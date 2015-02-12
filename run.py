@@ -91,8 +91,7 @@ def get_recent_10_tuple():
     for row in recent_raw:
         recent_time_decoded.append((row[0], convert_time(row[1])))
 
-    recent_time_decoded.sort(key=lambda tup: tup[1],
-                                                   reverse=True)
+    recent_time_decoded.sort(key=lambda tup: tup[1], reverse=True)
 
     recent_maps = [row[0] for row in recent_time_decoded]
     return recent_maps[:20]
