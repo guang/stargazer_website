@@ -20,3 +20,10 @@ def mktime_to_ms(mktime):
     # converting second (from mktime) to milisecond
     time_in_ms = 1000*int(mktime - epoch_sec)
     return time_in_ms
+
+
+def convert_time(time_string):
+    time_string_no_trailing = time_string.split("+")[0]
+    time_struct = time.strptime(time_string_no_trailing, '"%Y-%m-%dT%H:%M:%S')
+
+    return time.mktime(time_struct)

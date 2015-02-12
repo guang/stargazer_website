@@ -10,6 +10,7 @@
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="../static/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+<script src="../static/js/duration_by_time.js"></script>
 
 <body class="body">
 
@@ -49,7 +50,7 @@
       <div class="col-md-2">
         <div class="form-group">
           <label for="yolo">Map Name:</label>
-          <input id="map_name">
+          <input id="map_name" placeholder="Deadwing LE">
         </div>
         <select id="query_type" class="form-control">
           <option value="duration">duration</option>
@@ -61,16 +62,22 @@
     </div>
 
     <!-- Top 10 Maps -->
+    <h1>&nbsp;</h1>
     <div class="row">
-    Most Popular Maps:
-      <div class="col-md-12">
+      <div class="col-md-9 text-center lead">
+        Most Popular Maps <small> (map name / match count) </small>
+      </div>
+      <div class="col-md-3 text-center lead">
+        Most Recent Maps
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
 
         <!-- Noice Spacing -->
-        <div class="col-md-1">
-        </div>
 
         <!-- Map num 0 -->
-        <div class="col-md-2">
+        <div class="col-md-3">
         {{top_10['num0']['map_name']}}
         <br>
         {{top_10['num0']['match_count']}}
@@ -79,7 +86,7 @@
         </div>
 
         <!-- Map num 1 -->
-        <div class="col-md-2">
+        <div class="col-md-3">
         {{top_10['num1']['map_name']}}
         <br>
         {{top_10['num1']['match_count']}}
@@ -88,7 +95,7 @@
         </div>
 
         <!-- Map num 2 -->
-        <div class="col-md-2">
+        <div class="col-md-3">
         {{top_10['num2']['map_name']}}
         <br>
         {{top_10['num2']['match_count']}}
@@ -97,7 +104,7 @@
         </div>
 
         <!-- Map num 3 -->
-        <div class="col-md-2">
+        <div class="col-md-3">
         {{top_10['num3']['map_name']}}
         <br>
         {{top_10['num3']['match_count']}}
@@ -105,8 +112,12 @@
         <embed src={{top_10['num3']['map_url']}} width="200px">
         </div>
 
+      </div>
+      <div class="row">
+        <!-- Noice Spacing -->
+
         <!-- Map num 4 -->
-        <div class="col-md-2">
+        <div class="col-md-3">
         {{top_10['num4']['map_name']}}
         <br>
         {{top_10['num4']['match_count']}}
@@ -114,17 +125,8 @@
         <embed src={{top_10['num4']['map_url']}} width="200px">
         </div>
 
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-
-        <!-- Noice Spacing -->
-        <div class="col-md-1">
-        </div>
-
         <!-- Map num 5 -->
-        <div class="col-md-2">
+        <div class="col-md-3">
         {{top_10['num5']['map_name']}}
         <br>
         {{top_10['num5']['match_count']}}
@@ -134,7 +136,7 @@
 
 
         <!-- Map num 6 -->
-        <div class="col-md-2">
+        <div class="col-md-3">
         {{top_10['num6']['map_name']}}
         <br>
         {{top_10['num6']['match_count']}}
@@ -143,7 +145,7 @@
         </div>
 
         <!-- Map num 7 -->
-        <div class="col-md-2">
+        <div class="col-md-3">
         {{top_10['num7']['map_name']}}
         <br>
         {{top_10['num7']['match_count']}}
@@ -151,29 +153,43 @@
         <embed src={{top_10['num7']['map_url']}} width="200px">
         </div>
 
-        <!-- Map num 8 -->
-        <div class="col-md-2">
-        {{top_10['num8']['map_name']}}
-        <br>
-        {{top_10['num8']['match_count']}}
-        <br>
-        <embed src={{top_10['num8']['map_url']}} width="200px">
-        </div>
-
-        <!-- Map num 9 -->
-        <div class="col-md-2">
-        {{top_10['num9']['map_name']}}
-        <br>
-        {{top_10['num9']['match_count']}}
-        <br>
-        <embed src={{top_10['num9']['map_url']}} width="200px">
-        </div>
-
-
       </div>
-      <div>
-
-      </div>
+    </div>
+    <div class="col-md-2">
+      {{recent_10[0]}}
+      <br>
+      {{recent_10[1]}}
+      <br>
+      {{recent_10[2]}}
+      <br>
+      {{recent_10[3]}}
+      <br>
+      {{recent_10[4]}}
+      <br>
+      {{recent_10[5]}}
+      <br>
+      {{recent_10[6]}}
+      <br>
+      {{recent_10[7]}}
+      <br>
+      {{recent_10[8]}}
+      <br>
+      {{recent_10[9]}}
+      <br>
+      {{recent_10[10]}}
+      <br>
+      {{recent_10[11]}}
+      <br>
+      {{recent_10[12]}}
+      <br>
+      {{recent_10[13]}}
+      <br>
+      {{recent_10[14]}}
+      <br>
+      {{recent_10[15]}}
+      <br>
+      {{recent_10[16]}}
+      <br>
     </div>
 
   </div>
@@ -184,6 +200,5 @@
 </body>
 
 <script src="../static/js/highcharts.js"></script>
-<script src="../static/js/duration_by_time.js"></script>
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
 </html>
